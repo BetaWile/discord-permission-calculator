@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="A permissions calculator for Discord.">
+      <link rel="icon" type="image/ico" href="https://discord.com/assets/07dca80a102d4149e9736d4b162cff6f.ico" />
+      <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-B9BoFFAuBaCfqw6lxWBZrhg/z4NkwqdBci+E+Sc2XlK/Rz25RYn8Fetb+Aw5irxa" crossorigin="anonymous">
+      <script src="script.js" async></script>
+      <link rel="stylesheet" href="style.css" >
+      <title>Permissions Calculator - discordapi.js.org</title>
+   </head>
+   <body class="select-none" draggable="false">
+      <div class="header">
+         <img draggable="false" class="logo select-none" src="https://cdn.discordapp.com/attachments/753632375858135152/772807172940890162/permcalculator.png"/>
+      </div>
+      <div class="container stacky-footer">
+         <div class="oauth">
+            <h3>
+               Invite a Bot
+               <hr>
+            </h3>
+            <p>
+               <span>Client ID: <input id="clientID" type="text" placeholder="264811613708746752" onkeyup="recalculate()"></span>
+               <br>
+               <span>Invitation Link: <a href="#" id="invite" style="text-decoration: none;"></a></span>
+               <br>
+               <span>Calculated Permissions: <span id="number" style="color:white">0</span>&nbsp;<code id="equation">0x0</code></span>
+            <div class="selector" >
+               <div class="col-me-maybe">
+                  <input id="oauthCodeGrant" type="checkbox" onclick="recalculate()">
+                  <label for="oauthCodeGrant">Require Code Grant</label>
+               </div>
+               <div class="col-me-maybe">
+                  <span>Redirect URI: <input id="oauthRedirect" type="text" placeholder="(optional)" onkeyup="recalculate()"></span>
+               </div>
+               <div class="col-me-maybe">
+                  <span>Scope: <input id="oauthScopes" type="text" placeholder="bot" onkeyup="recalculate()"></span>
+               </div>
+            </div>
+            </p>
+         </div>
+         <div class="selector">
+            <div class="col-me-maybe">
+               <h3>
+                  General Permissions
+                  <hr>
+               </h3>
+               <ul>
+                  <li>
+                     <input id="generalAdministrator" type="checkbox" onclick="recalculate()">
+                     <label class="orangutan-not-orange" for="generalAdministrator">Administrator</label>
+                  </li>
+                  <li>
+                     <input id="generalViewAuditLog" type="checkbox" onclick="recalculate()">
+                     <label for="generalViewAuditLog">View Audit Log</label>
+                  </li>
+                  <li>
+                     <input id="generalManageServer" type="checkbox" onclick="recalculate()">
+                     <label class="orangutan-not-orange" for="generalManageServer">Manage Server</label>
+                  </li>
+                  <li>
+                     <input id="generalManageRoles" type="checkbox" onclick="recalculate()">
+                     <label class="orangutan-not-orange" for="generalManageRoles">Manage Roles</label>
+                  </li>
+                  <li>
+                     <input id="generalManageChannels" type="checkbox" onclick="recalculate()">
+                     <label class="orangutan-not-orange" for="generalManageChannels">Manage Channels</label>
+                  </li>
+                  <li>
+                     <input id="generalKickMembers" type="checkbox" onclick="recalculate()">
+                     <label class="orangutan-not-orange" for="generalKickMembers">Kick Members</label>
+                  </li>
+                  <li>
+                     <input id="generalBanMembers" type="checkbox" onclick="recalculate()">
+                     <label class="orangutan-not-orange" for="generalBanMembers">Ban Members</label>
+                  </li>
+                  <li>
+                     <input id="generalCreateInstantInvite" type="checkbox" onclick="recalculate()">
+                     <label for="generalCreateInstantInvite">Create Instant Invite</label>
+                  </li>
+                  <li>
+                     <input id="generalChangeNickname" type="checkbox" onclick="recalculate()">
+                     <label for="generalChangeNickname">Change Nickname</label>
+                  </li>
+                  <li>
+                     <input id="generalManageNicknames" type="checkbox" onclick="recalculate()">
+                     <label for="generalManageNicknames">Manage Nicknames</label>
+                  </li>
+                  <li>
+                     <input id="generalManageEmojis" type="checkbox" onclick="recalculate()">
+                     <label for="generalManageEmojis">Manage Emojis</label>
+                  </li>
+                  <li>
+                     <input id="generalManageWebhooks" type="checkbox" onclick="recalculate()">
+                     <label class="orangutan-not-orange" for="generalManageWebhooks">Manage Webhooks</label>
+                  </li>
+               </ul>
+            </div>
+            <div class="col-me-maybe">
+               <h3>
+                  Text Permissions
+                  <hr>
+               </h3>
+               <ul>
+                  <li>
+                     <input id="textReadMessages" type="checkbox" onclick="recalculate(this)">
+                     <label for="textReadMessages">Read Messages</label>
+                  </li>
+                  <li>
+                     <input id="textSendMessages" type="checkbox" onclick="recalculate()">
+                     <label for="textSendMessages">Send Messages</label>
+                  </li>
+                  <li>
+                     <input id="textSendTTSMessages" type="checkbox" onclick="recalculate()">
+                     <label for="textSendTTSMessages">Send TTS Messages</label>
+                  </li>
+                  <li>
+                     <input id="textManageMessages" type="checkbox" onclick="recalculate()">
+                     <label class="orangutan-not-orange" for="textManageMessages">Manage Messages</label>
+                  </li>
+                  <li>
+                     <input id="textEmbedLinks" type="checkbox" onclick="recalculate()">
+                     <label for="textEmbedLinks">Embed Links</label>
+                  </li>
+                  <li>
+                     <input id="textAttachFiles" type="checkbox" onclick="recalculate()">
+                     <label for="textAttachFiles">Attach Files</label>
+                  </li>
+                  <li>
+                     <input id="textReadMessageHistory" type="checkbox" onclick="recalculate()">
+                     <label for="textReadMessageHistory">Read Message History</label>
+                  </li>
+                  <li>
+                     <input id="textMentionEveryone" type="checkbox" onclick="recalculate()">
+                     <label for="textMentionEveryone">Mention @everyone, @here, and All Roles</label>
+                  </li>
+                  <li>
+                     <input id="textUseExternalEmojis" type="checkbox" onclick="recalculate()">
+                     <label for="textUseExternalEmojis">Use External Emojis</label>
+                  </li>
+                  <li>
+                     <input id="textAddReactions" type="checkbox" onclick="recalculate()">
+                     <label for="textAddReactions">Add Reactions</label>
+                  </li>
+               </ul>
+            </div>
+            <div class="col-me-maybe">
+               <h3>
+                  Voice Permissions
+                  <hr>
+               </h3>
+               <ul>
+                  <li>
+                     <input id="voiceViewChannel" type="checkbox" onclick="recalculate(this)">
+                     <label for="voiceViewChannel">View Channel</label>
+                  </li>
+                  <li>
+                     <input id="voiceConnect" type="checkbox" onclick="recalculate()">
+                     <label for="voiceConnect">Connect</label>
+                  </li>
+                  <li>
+                     <input id="voiceMuteMembers" type="checkbox" onclick="recalculate()">
+                     <label for="voiceMuteMembers">Mute Members</label>
+                  </li>
+                  <li>
+                     <input id="voiceMoveMembers" type="checkbox" onclick="recalculate()">
+                     <label for="voiceMoveMembers">Move Members</label>
+                  </li>
+                  <li>
+                     <input id="voiceSpeak" type="checkbox" onclick="recalculate()">
+                     <label for="voiceSpeak">Speak</label>
+                  </li>
+                  <li>
+                     <input id="voiceDeafenMembers" type="checkbox" onclick="recalculate()">
+                     <label for="voiceDeafenMembers">Deafen Members</label>
+                  </li>
+                  <li>
+                     <input id="voiceUseVAD" type="checkbox" onclick="recalculate()">
+                     <label for="voiceUseVAD">Use Voice Activity</label>
+                  </li>
+                  <li>
+                     <input id="voicePrioritySpeaker" type="checkbox" onclick="recalculate()">
+                     <label for="voicePrioritySpeaker">Priority Speaker</label>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <br>
+         <br>
+      </div>
+   </body>
+</html>
