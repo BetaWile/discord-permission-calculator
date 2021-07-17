@@ -19,171 +19,157 @@
       <div class="container stacky-footer">
          <div class="oauth">
             <h3>
-               Invite a Bot
+               Botu Davet Et
                <hr>
             </h3>
             <p>
-               <span>Client ID: <input id="clientID" type="text" placeholder="264811613708746752" onkeyup="recalculate()"></span>
+               <span>Bot ID: <input id="clientID" type="text" placeholder="264811613708746752" onkeyup="recalculate()"></span>
                <br>
-               <span>Invitation Link: <a href="#" id="invite" style="text-decoration: none;"></a></span>
+               <span>Davet Linki: <a href="#" id="invite" style="text-decoration: none;"></a></span>
                <br>
-               <span>Calculated Permissions: <span id="number" style="color:white">0</span>&nbsp;<code id="equation">0x0</code></span>
-            <div class="selector" >
-               <div class="col-me-maybe">
-                  <input id="oauthCodeGrant" type="checkbox" onclick="recalculate()">
-                  <label for="oauthCodeGrant">Require Code Grant</label>
-               </div>
-               <div class="col-me-maybe">
-                  <span>Redirect URI: <input id="oauthRedirect" type="text" placeholder="(optional)" onkeyup="recalculate()"></span>
-               </div>
-               <div class="col-me-maybe">
-                  <span>Scope: <input id="oauthScopes" type="text" placeholder="bot" onkeyup="recalculate()"></span>
-               </div>
-            </div>
-            </p>
-         </div>
+               <span>Bot Yetkisi: <span id="number" style="color:white">0</span>&nbsp;<code id="equation">0x0</code></span>
          <div class="selector">
             <div class="col-me-maybe">
                <h3>
-                  General Permissions
+                  Genel Yetkiler
                   <hr>
                </h3>
                <ul>
                   <li>
                      <input id="generalAdministrator" type="checkbox" onclick="recalculate()">
-                     <label class="orangutan-not-orange" for="generalAdministrator">Administrator</label>
+                     <label class="orangutan-not-orange" for="generalAdministrator">Yönetici</label>
                   </li>
                   <li>
                      <input id="generalViewAuditLog" type="checkbox" onclick="recalculate()">
-                     <label for="generalViewAuditLog">View Audit Log</label>
+                     <label for="generalViewAuditLog">Denetim Kaydını Görüntüle</label>
                   </li>
                   <li>
                      <input id="generalManageServer" type="checkbox" onclick="recalculate()">
-                     <label class="orangutan-not-orange" for="generalManageServer">Manage Server</label>
+                     <label class="orangutan-not-orange" for="generalManageServer">Sunucu Yönet</label>
                   </li>
                   <li>
                      <input id="generalManageRoles" type="checkbox" onclick="recalculate()">
-                     <label class="orangutan-not-orange" for="generalManageRoles">Manage Roles</label>
+                     <label class="orangutan-not-orange" for="generalManageRoles">Rolleri Yönet</label>
                   </li>
                   <li>
                      <input id="generalManageChannels" type="checkbox" onclick="recalculate()">
-                     <label class="orangutan-not-orange" for="generalManageChannels">Manage Channels</label>
+                     <label class="orangutan-not-orange" for="generalManageChannels">Kanalları Yönet</label>
                   </li>
                   <li>
                      <input id="generalKickMembers" type="checkbox" onclick="recalculate()">
-                     <label class="orangutan-not-orange" for="generalKickMembers">Kick Members</label>
+                     <label class="orangutan-not-orange" for="generalKickMembers">Üyeleri At</label>
                   </li>
                   <li>
                      <input id="generalBanMembers" type="checkbox" onclick="recalculate()">
-                     <label class="orangutan-not-orange" for="generalBanMembers">Ban Members</label>
+                     <label class="orangutan-not-orange" for="generalBanMembers">Üyeleri Engelle</label>
                   </li>
                   <li>
                      <input id="generalCreateInstantInvite" type="checkbox" onclick="recalculate()">
-                     <label for="generalCreateInstantInvite">Create Instant Invite</label>
+                     <label for="generalCreateInstantInvite">Davet Oluştur</label>
                   </li>
                   <li>
                      <input id="generalChangeNickname" type="checkbox" onclick="recalculate()">
-                     <label for="generalChangeNickname">Change Nickname</label>
+                     <label for="generalChangeNickname">Kullanıcı Adı Değiştir</label>
                   </li>
                   <li>
                      <input id="generalManageNicknames" type="checkbox" onclick="recalculate()">
-                     <label for="generalManageNicknames">Manage Nicknames</label>
+                     <label for="generalManageNicknames">Kullanıcı Adlarını Yönet</label>
                   </li>
                   <li>
                      <input id="generalManageEmojis" type="checkbox" onclick="recalculate()">
-                     <label for="generalManageEmojis">Manage Emojis</label>
+                     <label for="generalManageEmojis">Emojileri Yönet</label>
                   </li>
                   <li>
                      <input id="generalManageWebhooks" type="checkbox" onclick="recalculate()">
-                     <label class="orangutan-not-orange" for="generalManageWebhooks">Manage Webhooks</label>
+                     <label class="orangutan-not-orange" for="generalManageWebhooks">Webhook'ları Yönet</label>
                   </li>
                </ul>
             </div>
             <div class="col-me-maybe">
                <h3>
-                  Text Permissions
+                  Yazı Kanalları Yetkileri
                   <hr>
                </h3>
                <ul>
                   <li>
                      <input id="textReadMessages" type="checkbox" onclick="recalculate(this)">
-                     <label for="textReadMessages">Read Messages</label>
+                     <label for="textReadMessages">Mesajları Oku</label>
                   </li>
                   <li>
                      <input id="textSendMessages" type="checkbox" onclick="recalculate()">
-                     <label for="textSendMessages">Send Messages</label>
+                     <label for="textSendMessages">Mesaj Gönder</label>
                   </li>
                   <li>
                      <input id="textSendTTSMessages" type="checkbox" onclick="recalculate()">
-                     <label for="textSendTTSMessages">Send TTS Messages</label>
+                     <label for="textSendTTSMessages">TTS Mesaj Gönder</label>
                   </li>
                   <li>
                      <input id="textManageMessages" type="checkbox" onclick="recalculate()">
-                     <label class="orangutan-not-orange" for="textManageMessages">Manage Messages</label>
+                     <label class="orangutan-not-orange" for="textManageMessages">Mesajları Yönet</label>
                   </li>
                   <li>
                      <input id="textEmbedLinks" type="checkbox" onclick="recalculate()">
-                     <label for="textEmbedLinks">Embed Links</label>
+                     <label for="textEmbedLinks">Bağlantı Yerleştir</label>
                   </li>
                   <li>
                      <input id="textAttachFiles" type="checkbox" onclick="recalculate()">
-                     <label for="textAttachFiles">Attach Files</label>
+                     <label for="textAttachFiles">Dosya Ekle</label>
                   </li>
                   <li>
                      <input id="textReadMessageHistory" type="checkbox" onclick="recalculate()">
-                     <label for="textReadMessageHistory">Read Message History</label>
+                     <label for="textReadMessageHistory">Mesaj Geçmişini Oku</label>
                   </li>
                   <li>
                      <input id="textMentionEveryone" type="checkbox" onclick="recalculate()">
-                     <label for="textMentionEveryone">Mention @everyone, @here, and All Roles</label>
+                     <label for="textMentionEveryone">@everyone, @here ve Tüm Rollerden Bahsetme</label>
                   </li>
                   <li>
                      <input id="textUseExternalEmojis" type="checkbox" onclick="recalculate()">
-                     <label for="textUseExternalEmojis">Use External Emojis</label>
+                     <label for="textUseExternalEmojis">Harici Emoji Kullan</label>
                   </li>
                   <li>
                      <input id="textAddReactions" type="checkbox" onclick="recalculate()">
-                     <label for="textAddReactions">Add Reactions</label>
+                     <label for="textAddReactions">Tepki Ekle</label>
                   </li>
                </ul>
             </div>
             <div class="col-me-maybe">
                <h3>
-                  Voice Permissions
+                  Ses Kanalları Yetkileri
                   <hr>
                </h3>
                <ul>
                   <li>
                      <input id="voiceViewChannel" type="checkbox" onclick="recalculate(this)">
-                     <label for="voiceViewChannel">View Channel</label>
+                     <label for="voiceViewChannel">Kanlları Görüntüle</label>
                   </li>
                   <li>
                      <input id="voiceConnect" type="checkbox" onclick="recalculate()">
-                     <label for="voiceConnect">Connect</label>
+                     <label for="voiceConnect">Bağlan</label>
                   </li>
                   <li>
                      <input id="voiceMuteMembers" type="checkbox" onclick="recalculate()">
-                     <label for="voiceMuteMembers">Mute Members</label>
+                     <label for="voiceMuteMembers">Üyeleri Sustur</label>
                   </li>
                   <li>
                      <input id="voiceMoveMembers" type="checkbox" onclick="recalculate()">
-                     <label for="voiceMoveMembers">Move Members</label>
+                     <label for="voiceMoveMembers">Üyeleri Taşı</label>
                   </li>
                   <li>
                      <input id="voiceSpeak" type="checkbox" onclick="recalculate()">
-                     <label for="voiceSpeak">Speak</label>
+                     <label for="voiceSpeak">Konuş</label>
                   </li>
                   <li>
                      <input id="voiceDeafenMembers" type="checkbox" onclick="recalculate()">
-                     <label for="voiceDeafenMembers">Deafen Members</label>
+                     <label for="voiceDeafenMembers">Üyeleri Sağırlaştır</label>
                   </li>
                   <li>
                      <input id="voiceUseVAD" type="checkbox" onclick="recalculate()">
-                     <label for="voiceUseVAD">Use Voice Activity</label>
+                     <label for="voiceUseVAD">Ses Eylemini Kullan</label>
                   </li>
                   <li>
                      <input id="voicePrioritySpeaker" type="checkbox" onclick="recalculate()">
-                     <label for="voicePrioritySpeaker">Priority Speaker</label>
+                     <label for="voicePrioritySpeaker">Öncelikli Konuşmacı</label>
                   </li>
                </ul>
             </div>
@@ -193,3 +179,4 @@
       </div>
    </body>
 </html>
+
